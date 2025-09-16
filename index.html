@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ayurveda App</title>
+  <script src="/static/voice.js"></script>
+</head>
+<body class="p-4">
+  <h1>Ayurveda Practice Management</h1>
+  <ul>
+    <li><a href="/patients">Manage Patients</a></li>
+    <li><a href="/diet_plan">Generate Diet Plan</a></li>
+  </ul>
+  <h3>OCR Upload</h3>
+  <form action="/ocr" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" />
+    <input type="submit" value="Upload & Extract" />
+  </form>
+</body>
+</html>

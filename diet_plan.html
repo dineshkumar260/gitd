@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head><title>Diet Plan</title></head>
+<body>
+  <h1>Diet Plan Generator</h1>
+  <form method="post">
+    Enter foods (comma separated): <br>
+    <input type="text" name="foods">
+    <button type="submit">Generate</button>
+  </form>
+  {% if plan %}
+    <h2>Plan</h2>
+    <table border="1">
+      <tr><th>Food</th><th>Calories</th><th>Protein</th><th>Ayurveda Advice</th></tr>
+      {% for item in plan %}
+      <tr>
+        <td>{{item.food}}</td><td>{{item.calories}}</td><td>{{item.protein}}</td><td>{{item.ayurveda}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <form action="/translate" method="post">
+      <input type="hidden" name="text" value="{{plan}}">
+      <label>Export Language:</label>
+      <select name="lang">
+        <option value="en">English</option>
+        <option value="hi">Hindi</option>
+      </select>
+      <button type="submit">Export</button>
+    </form>
+  {% endif %}
+  <a href="/">Back</a>
+</body>
+</html>

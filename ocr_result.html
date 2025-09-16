@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head><title>OCR Result</title></head>
+<body>
+  <h1>Extracted Text</h1>
+  <pre>{{ text }}</pre>
+  <form action="/translate" method="post">
+    <input type="hidden" name="text" value="{{ text }}">
+    <label>Translate To:</label>
+    <select name="lang">
+      <option value="en">English</option>
+      <option value="hi">Hindi</option>
+    </select>
+    <button type="submit">Translate</button>
+  </form>
+  <a href="/">Back</a>
+</body>
+</html>

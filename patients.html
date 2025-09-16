@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><title>Patients</title></head>
+<body>
+  <h1>Patients</h1>
+  <form method="post">
+    Name: <input type="text" name="name" id="name"><br>
+    Age: <input type="number" name="age" id="age"><br>
+    Dosha:
+    <select name="dosha" id="dosha">
+      <option value="Vata">Vata</option>
+      <option value="Pitta">Pitta</option>
+      <option value="Kapha">Kapha</option>
+    </select><br>
+    <button type="submit">Add Patient</button>
+  </form>
+  <button onclick="startDictation()">🎤 Voice Input</button>
+  <h2>Patient List</h2>
+  <ul>
+    {% for p in patients %}
+      <li>{{p[1]}} (Age {{p[2]}}, Dosha: {{p[3]}})</li>
+    {% endfor %}
+  </ul>
+  <a href="/">Back</a>
+</body>
+</html>
